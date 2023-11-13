@@ -1,0 +1,315 @@
+import numpy as np
+import torch
+import torch.nn as nn
+import torchvision
+from torchvision import models
+from torch.autograd import Variable
+
+
+class AlexNet_32(nn.Module):
+
+  def __init__(self, classes=100):
+    super(AlexNet_32, self).__init__()
+    self.features = nn.Sequential(
+      nn.Conv2d(3, 64, kernel_size=3, stride=2, padding=1),
+      nn.ReLU(inplace=True),
+      nn.MaxPool2d(kernel_size=3, stride=2),
+      nn.Conv2d(64, 192, kernel_size=3, stride=1, padding=1),
+      nn.ReLU(inplace=True),
+      nn.MaxPool2d(kernel_size=3, stride=2),
+      nn.Conv2d(192, 384, kernel_size=3, stride=1, padding=1),
+      nn.ReLU(inplace=True),
+      nn.Conv2d(384, 256, kernel_size=3, stride=1, padding=1),
+      nn.ReLU(inplace=True),
+      nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),
+      nn.ReLU(inplace=True),
+      nn.MaxPool2d(kernel_size=3, stride=2),
+    )
+    self.classifier = nn.Sequential(
+      nn.Dropout(),
+      nn.Linear(256 * 1 * 1, 4096),
+      nn.ReLU(inplace=True),
+      nn.Dropout(),
+      nn.Linear(4096, 4096),
+      nn.ReLU(inplace=True),
+      nn.Linear(4096, classes),
+    )
+
+  def forward(self, x):
+    x = self.features(x)
+    x = torch.flatten(x, 1)
+    x = self.classifier(x)
+    return x
+
+
+
+class basicNNFC(nn.Module):
+    def __init__(self, input_shape, cls_num):
+        super(basicNNFC, self).__init__()
+        model = nn.Sequential(
+            nn.Linear( input_shape , 1024),
+            nn.ReLU(),
+            nn.Linear( 1024 , 256),
+            nn.ReLU(),
+            nn.Linear( 256 , 128),
+            nn.ReLU(),
+            # nn.Linear( 256 , 128),
+            nn.Linear( 128 , cls_num),
+        )
+        self.features = model[:-1]
+        # self.classifier = model[-1]
+        self.__in_features = 128
+
+
+    def forward(self, x):
+        x = self.features(x)
+        # pred = self.classifier(x)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+class FCNN(nn.Module):
+    def __init__(self,input_shape, cls_num):
+        super(FCNN, self).__init__()
+        self.fcnn = nn.Sequential(
+            nn.Linear(input_shape, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 256),
+            nn.ReLU(),
+            nn.Linear(256,cls_num)
+        )
+
+    def forward(self, x):
+        # x = x.view(-1,28*28)
+        output = self.fcnn(x)
+        return output  
+
+class FCNNFC(nn.Module):
+    def __init__(self, input_shape, cls_num):
+        super(FCNNFC, self).__init__()
+        model = nn.Sequential(
+            nn.Linear(input_shape, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 256),
+            nn.ReLU(),
+            nn.Linear(256,cls_num)
+        )
+        self.features = model[:-1]
+        self.__in_features = 256
+
+
+    def forward(self, x):
+        x = self.features(x)
+        # pred = self.classifier(x)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+# convnet without the last layer
+class AlexNetFc(nn.Module):
+    def __init__(self):
+        super(AlexNetFc, self).__init__()
+
+        model_alexnet = AlexNet_32()
+        print(model_alexnet)
+        self.features = model_alexnet.features
+        self.classifier = nn.Sequential()
+        for i in [1,2,4]:
+            self.classifier.add_module(
+                "classifier"+str(i), model_alexnet.classifier[i])
+        self.__in_features = model_alexnet.classifier[6].in_features
+        
+        # model_alexnet = models.alexnet(pretrained=False)
+        # self.features = model_alexnet.features
+        # self.classifier = nn.Sequential()
+        # # for i in range(6):
+        # for i in [1,2,4]:
+        #     self.classifier.add_module(
+        #         "classifier"+str(i), model_alexnet.classifier[i])
+        # self.__in_features = model_alexnet.classifier[6].in_features
+
+    def forward(self, x):
+        x = self.features(x)
+        x = torch.flatten(x, 1)
+        x = self.classifier(x)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+class ResNet18Fc(nn.Module):
+
+    def __init__(self):
+        super(ResNet18Fc, self).__init__()
+        model_resnet18 = models.resnet18(pretrained=False)
+        self.conv1 = model_resnet18.conv1
+        self.bn1 = model_resnet18.bn1
+        self.relu = model_resnet18.relu
+        self.maxpool = model_resnet18.maxpool
+        self.layer1 = model_resnet18.layer1
+        self.layer2 = model_resnet18.layer2
+        self.layer3 = model_resnet18.layer3
+        self.layer4 = model_resnet18.layer4
+        self.avgpool = model_resnet18.avgpool
+        self.__in_features = model_resnet18.fc.in_features
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+        x = self.layer4(x)
+        x = self.avgpool(x)
+        x = x.view(x.size(0), -1)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+class ResNet34Fc(nn.Module):
+    def __init__(self):
+        super(ResNet34Fc, self).__init__()
+        model_resnet34 = models.resnet34(pretrained=True)
+        self.conv1 = model_resnet34.conv1
+        self.bn1 = model_resnet34.bn1
+        self.relu = model_resnet34.relu
+        self.maxpool = model_resnet34.maxpool
+        self.layer1 = model_resnet34.layer1
+        self.layer2 = model_resnet34.layer2
+        self.layer3 = model_resnet34.layer3
+        self.layer4 = model_resnet34.layer4
+        self.avgpool = model_resnet34.avgpool
+        self.__in_features = model_resnet34.fc.in_features
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+        x = self.layer4(x)
+        x = self.avgpool(x)
+        x = x.view(x.size(0), -1)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+class ResNet50Fc(nn.Module):
+    
+    def __init__(self):
+        super(ResNet50Fc, self).__init__()
+        model_resnet50 = models.resnet50(pretrained=True)
+        self.conv1 = model_resnet50.conv1
+        self.bn1 = model_resnet50.bn1
+        self.relu = model_resnet50.relu
+        self.maxpool = model_resnet50.maxpool
+        self.layer1 = model_resnet50.layer1
+        self.layer2 = model_resnet50.layer2
+        self.layer3 = model_resnet50.layer3
+        self.layer4 = model_resnet50.layer4
+        self.avgpool = model_resnet50.avgpool
+        self.__in_features = model_resnet50.fc.in_features
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+        x = self.layer4(x)
+        x = self.avgpool(x)
+        x = x.view(x.size(0), -1)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+class ResNet101Fc(nn.Module):
+    def __init__(self):
+        super(ResNet101Fc, self).__init__()
+        model_resnet101 = models.resnet101(pretrained=True)
+        self.conv1 = model_resnet101.conv1
+        self.bn1 = model_resnet101.bn1
+        self.relu = model_resnet101.relu
+        self.maxpool = model_resnet101.maxpool
+        self.layer1 = model_resnet101.layer1
+        self.layer2 = model_resnet101.layer2
+        self.layer3 = model_resnet101.layer3
+        self.layer4 = model_resnet101.layer4
+        self.avgpool = model_resnet101.avgpool
+        self.__in_features = model_resnet101.fc.in_features
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+        x = self.layer4(x)
+        x = self.avgpool(x)
+        x = x.view(x.size(0), -1)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+class ResNet152Fc(nn.Module):
+    def __init__(self):
+        super(ResNet152Fc, self).__init__()
+        model_resnet152 = models.resnet152(pretrained=True)
+        self.conv1 = model_resnet152.conv1
+        self.bn1 = model_resnet152.bn1
+        self.relu = model_resnet152.relu
+        self.maxpool = model_resnet152.maxpool
+        self.layer1 = model_resnet152.layer1
+        self.layer2 = model_resnet152.layer2
+        self.layer3 = model_resnet152.layer3
+        self.layer4 = model_resnet152.layer4
+        self.avgpool = model_resnet152.avgpool
+        self.__in_features = model_resnet152.fc.in_features
+
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.bn1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = self.layer1(x)
+        x = self.layer2(x)
+        x = self.layer3(x)
+        x = self.layer4(x)
+        x = self.avgpool(x)
+        x = x.view(x.size(0), -1)
+        return x
+
+    def output_num(self):
+        return self.__in_features
+
+
+network_dict = {
+                "basic_nn": basicNNFC,
+                "FCNN": FCNNFC,
+                "alexnet": AlexNetFc,
+                "resnet18": ResNet18Fc,
+                "resnet34": ResNet34Fc,
+                "resnet50": ResNet50Fc,
+                "resnet101": ResNet101Fc,
+                "resnet152": ResNet152Fc}

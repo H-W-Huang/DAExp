@@ -1,0 +1,84 @@
+Building MNIST data loader with 1 workers
+basic_NN(
+  (model): Sequential(
+    (0): Linear(in_features=784, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+basic_NN(
+  (model): Sequential(
+    (0): Linear(in_features=784, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+epoch : 1
+on train:
+Accuracy: 94.275000 %
+on test:
+Accuracy: 89.600000 %
+epoch : 2
+on train:
+Accuracy: 93.725000 %
+on test:
+Accuracy: 87.800000 %
+epoch : 3
+on train:
+Accuracy: 98.062500 %
+on test:
+Accuracy: 92.350000 %
+epoch : 4
+on train:
+Accuracy: 98.637500 %
+on test:
+Accuracy: 92.750000 %
+epoch : 5
+on train:
+Accuracy: 98.450000 %
+on test:
+Accuracy: 92.500000 %
+model is saved as pure_svhn_5.pt
+epoch : 6
+on train:
+Accuracy: 97.675000 %
+on test:
+Accuracy: 92.600000 %
+epoch : 7
+on train:
+Accuracy: 99.225000 %
+on test:
+Accuracy: 93.350000 %
+epoch : 8
+on train:
+Accuracy: 99.050000 %
+on test:
+Accuracy: 92.550000 %
+epoch : 9
+on train:
+Accuracy: 98.625000 %
+on test:
+Accuracy: 93.200000 %
+epoch : 10
+on train:
+Accuracy: 99.637500 %
+on test:
+Accuracy: 94.050000 %
+model is saved as pure_svhn_10.pt
+the trainig takes 11.492351770401001s

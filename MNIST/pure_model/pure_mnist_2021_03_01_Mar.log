@@ -1,0 +1,376 @@
+Building MNIST data loader with 1 workers
+basic_NN(
+  (model): Sequential(
+    (0): Linear(in_features=784, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+basic_NN(
+  (model): Sequential(
+    (0): Linear(in_features=784, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+epoch : 1
+epoch : 2
+epoch : 3
+epoch : 4
+epoch : 5
+on train:
+Accuracy: 98.912500 %
+on test:
+Accuracy: 92.750000 %
+model is saved as pure_svhn_5.pt
+epoch : 6
+epoch : 7
+epoch : 8
+epoch : 9
+epoch : 10
+on train:
+Accuracy: 99.612500 %
+on test:
+Accuracy: 93.650000 %
+model is saved as pure_svhn_10.pt
+epoch : 11
+epoch : 12
+epoch : 13
+epoch : 14
+epoch : 15
+on train:
+Accuracy: 99.450000 %
+on test:
+Accuracy: 93.600000 %
+model is saved as pure_svhn_15.pt
+epoch : 16
+epoch : 17
+epoch : 18
+epoch : 19
+epoch : 20
+on train:
+Accuracy: 99.287500 %
+on test:
+Accuracy: 93.750000 %
+model is saved as pure_svhn_20.pt
+epoch : 21
+epoch : 22
+epoch : 23
+epoch : 24
+epoch : 25
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.950000 %
+model is saved as pure_svhn_25.pt
+epoch : 26
+epoch : 27
+epoch : 28
+epoch : 29
+epoch : 30
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.850000 %
+model is saved as pure_svhn_30.pt
+epoch : 31
+epoch : 32
+epoch : 33
+epoch : 34
+epoch : 35
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.750000 %
+model is saved as pure_svhn_35.pt
+epoch : 36
+epoch : 37
+epoch : 38
+epoch : 39
+epoch : 40
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.800000 %
+model is saved as pure_svhn_40.pt
+epoch : 41
+epoch : 42
+epoch : 43
+epoch : 44
+epoch : 45
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.850000 %
+model is saved as pure_svhn_45.pt
+epoch : 46
+epoch : 47
+epoch : 48
+epoch : 49
+epoch : 50
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.900000 %
+model is saved as pure_svhn_50.pt
+epoch : 51
+epoch : 52
+epoch : 53
+epoch : 54
+epoch : 55
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.900000 %
+model is saved as pure_svhn_55.pt
+epoch : 56
+epoch : 57
+epoch : 58
+epoch : 59
+epoch : 60
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.900000 %
+model is saved as pure_svhn_60.pt
+epoch : 61
+epoch : 62
+epoch : 63
+epoch : 64
+epoch : 65
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.850000 %
+model is saved as pure_svhn_65.pt
+epoch : 66
+epoch : 67
+epoch : 68
+epoch : 69
+epoch : 70
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.850000 %
+model is saved as pure_svhn_70.pt
+epoch : 71
+epoch : 72
+epoch : 73
+epoch : 74
+epoch : 75
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.950000 %
+model is saved as pure_svhn_75.pt
+epoch : 76
+epoch : 77
+epoch : 78
+epoch : 79
+epoch : 80
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.050000 %
+model is saved as pure_svhn_80.pt
+epoch : 81
+epoch : 82
+epoch : 83
+epoch : 84
+epoch : 85
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.200000 %
+model is saved as pure_svhn_85.pt
+epoch : 86
+epoch : 87
+epoch : 88
+epoch : 89
+epoch : 90
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.150000 %
+model is saved as pure_svhn_90.pt
+epoch : 91
+epoch : 92
+epoch : 93
+epoch : 94
+epoch : 95
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.250000 %
+model is saved as pure_svhn_95.pt
+epoch : 96
+epoch : 97
+epoch : 98
+epoch : 99
+epoch : 100
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.250000 %
+model is saved as pure_svhn_100.pt
+epoch : 101
+epoch : 102
+epoch : 103
+epoch : 104
+epoch : 105
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.300000 %
+model is saved as pure_svhn_105.pt
+epoch : 106
+epoch : 107
+epoch : 108
+epoch : 109
+epoch : 110
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.200000 %
+model is saved as pure_svhn_110.pt
+epoch : 111
+epoch : 112
+epoch : 113
+epoch : 114
+epoch : 115
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.200000 %
+model is saved as pure_svhn_115.pt
+epoch : 116
+epoch : 117
+epoch : 118
+epoch : 119
+epoch : 120
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.150000 %
+model is saved as pure_svhn_120.pt
+epoch : 121
+epoch : 122
+epoch : 123
+epoch : 124
+epoch : 125
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.150000 %
+model is saved as pure_svhn_125.pt
+epoch : 126
+epoch : 127
+epoch : 128
+epoch : 129
+epoch : 130
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.200000 %
+model is saved as pure_svhn_130.pt
+epoch : 131
+epoch : 132
+epoch : 133
+epoch : 134
+epoch : 135
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.050000 %
+model is saved as pure_svhn_135.pt
+epoch : 136
+epoch : 137
+epoch : 138
+epoch : 139
+epoch : 140
+on train:
+Accuracy: 99.737500 %
+on test:
+Accuracy: 94.150000 %
+model is saved as pure_svhn_140.pt
+epoch : 141
+epoch : 142
+epoch : 143
+epoch : 144
+epoch : 145
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 94.750000 %
+model is saved as pure_svhn_145.pt
+epoch : 146
+epoch : 147
+epoch : 148
+epoch : 149
+epoch : 150
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.300000 %
+model is saved as pure_svhn_150.pt
+epoch : 151
+epoch : 152
+epoch : 153
+epoch : 154
+epoch : 155
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.350000 %
+model is saved as pure_svhn_155.pt
+epoch : 156
+epoch : 157
+epoch : 158
+epoch : 159
+epoch : 160
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.300000 %
+model is saved as pure_svhn_160.pt
+epoch : 161
+Traceback (most recent call last):
+  File "pure.py", line 152, in <module>
+    run()
+  File "pure.py", line 146, in run
+    train_model(train_loader, test_loader, model, epoch, lr=lr, print_interval=print_interval)
+  File "pure.py", line 61, in train_model
+    for step, (x, y) in enumerate(train_loader):   # gives batch data, normalize x when iterate train_loader
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 576, in __next__
+    idx, batch = self._get_batch()
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 553, in _get_batch
+    success, data = self._try_get_batch()
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 511, in _try_get_batch
+    data = self.data_queue.get(timeout=timeout)
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/multiprocessing/queues.py", line 104, in get
+    if not self._poll(timeout):
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/multiprocessing/connection.py", line 257, in poll
+    return self._poll(timeout)
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/multiprocessing/connection.py", line 414, in _poll
+    r = wait([self], timeout)
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/multiprocessing/connection.py", line 911, in wait
+    ready = selector.select(timeout)
+  File "/home/user01/miniconda3/envs/torch1/lib/python3.6/selectors.py", line 376, in select
+    fd_event_list = self._poll.poll(timeout)
+KeyboardInterrupt

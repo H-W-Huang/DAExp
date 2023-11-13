@@ -1,0 +1,45 @@
+# coding: utf-8
+clear
+ls
+from data_utils import *
+clear
+mnist_train_dataloader,_ = get_target_dataloader_mnist()
+mnist_train_dataloader,_ = get_target_dataloader_mnist(64)
+mnist_train_data = mnist_train_dataloader.dataset.dataset[0]
+mnist_train_data
+mnist_train_data.shape
+mnist_train_data[0]
+mnist_train_data[0].shape
+mnist_train_data = mnist_train_dataloader.dataset.dataset.shape
+mnist_train_data = mnist_train_dataloader.dataset.dataset[0]
+ mnist_train_dataloader.dataset.dataset[0]
+ mnist_train_dataloader.dataset.dataset[1]
+ mnist_train_dataloader.dataset.dataset.data[0]
+ mnist_train_dataloader.dataset.dataset.data[0].shape
+target_mnist_train_data =  mnist_train_dataloader.dataset.dataset.data[mnist_train_dataloader.dataset.indices]
+target_mnist_train_data.shape
+extra_mnist_train_dataloader,_ = get_extra_dataloader_mnist(64)
+source_mnist_train_data =  extra_mnist_train_dataloader.dataset.dataset.data[extra_mnist_train_dataloader.dataset.indices]
+target_mnist_train_data.shape
+np.average(target_mnist_train_data,axis=1).shape
+np.average(target_mnist_train_data,axis=0).shape
+target_rep = np.average(target_mnist_train_data,axis=0).shape
+source_rep = np.average(ex_mnist_train_data,axis=0).shape
+target_rep
+target_rep = np.average(target_mnist_train_data,axis=0)
+target_rep
+source_rep = np.average(source_mnist_train_data,axis=0)
+from PIL import Image
+target_rep_im = Image.fromarray(target_rep)
+source_rep_im = Image.fromarray(source_rep)
+import imagehash
+!pip install imagehash
+import imagehash
+highfreq_factor = 1
+hash_size = 8
+img_size = hash_size * highfreq_factor
+hash1 = imagehash.phash(target_rep_im,hash_size=hash_size,highfreq_factor=highfreq_factor)
+hash2 = imagehash.phash(source_rep_im,hash_size=hash_size,highfreq_factor=highfreq_factor)  
+1 - (hash1 - hash2)/len(hash1.hash)**
+1 - (hash1 - hash2)/len(hash1.hash)**2
+ %save -r similar_session 1-99999

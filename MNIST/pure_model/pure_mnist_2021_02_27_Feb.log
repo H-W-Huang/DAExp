@@ -1,0 +1,292 @@
+Building MNIST data loader with 1 workers
+basic_NN(
+  (model): Sequential(
+    (0): Linear(in_features=784, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.001
+    weight_decay: 0
+)
+basic_NN(
+  (model): Sequential(
+    (0): Linear(in_features=784, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): Linear(in_features=1024, out_features=256, bias=True)
+    (3): ReLU()
+    (4): Linear(in_features=256, out_features=128, bias=True)
+    (5): ReLU()
+    (6): Linear(in_features=128, out_features=10, bias=True)
+  )
+)
+epoch : 1
+on train:
+Accuracy: 94.275000 %
+on test:
+Accuracy: 89.600000 %
+epoch : 2
+on train:
+Accuracy: 93.725000 %
+on test:
+Accuracy: 87.800000 %
+epoch : 3
+on train:
+Accuracy: 98.062500 %
+on test:
+Accuracy: 92.350000 %
+epoch : 4
+on train:
+Accuracy: 98.637500 %
+on test:
+Accuracy: 92.750000 %
+epoch : 5
+on train:
+Accuracy: 98.450000 %
+on test:
+Accuracy: 92.500000 %
+model is saved as pure_svhn_5.pt
+epoch : 6
+on train:
+Accuracy: 97.675000 %
+on test:
+Accuracy: 92.600000 %
+epoch : 7
+on train:
+Accuracy: 99.225000 %
+on test:
+Accuracy: 93.350000 %
+epoch : 8
+on train:
+Accuracy: 99.050000 %
+on test:
+Accuracy: 92.550000 %
+epoch : 9
+on train:
+Accuracy: 98.625000 %
+on test:
+Accuracy: 93.200000 %
+epoch : 10
+on train:
+Accuracy: 99.637500 %
+on test:
+Accuracy: 94.050000 %
+model is saved as pure_svhn_10.pt
+epoch : 11
+on train:
+Accuracy: 99.112500 %
+on test:
+Accuracy: 94.100000 %
+epoch : 12
+on train:
+Accuracy: 99.000000 %
+on test:
+Accuracy: 93.100000 %
+epoch : 13
+on train:
+Accuracy: 99.737500 %
+on test:
+Accuracy: 93.500000 %
+epoch : 14
+on train:
+Accuracy: 99.250000 %
+on test:
+Accuracy: 92.800000 %
+epoch : 15
+on train:
+Accuracy: 99.512500 %
+on test:
+Accuracy: 93.650000 %
+model is saved as pure_svhn_15.pt
+epoch : 16
+on train:
+Accuracy: 99.800000 %
+on test:
+Accuracy: 94.100000 %
+epoch : 17
+on train:
+Accuracy: 99.525000 %
+on test:
+Accuracy: 94.500000 %
+epoch : 18
+on train:
+Accuracy: 99.812500 %
+on test:
+Accuracy: 93.800000 %
+epoch : 19
+on train:
+Accuracy: 99.775000 %
+on test:
+Accuracy: 93.900000 %
+epoch : 20
+on train:
+Accuracy: 98.737500 %
+on test:
+Accuracy: 92.150000 %
+model is saved as pure_svhn_20.pt
+epoch : 21
+on train:
+Accuracy: 99.837500 %
+on test:
+Accuracy: 94.750000 %
+epoch : 22
+on train:
+Accuracy: 99.150000 %
+on test:
+Accuracy: 93.100000 %
+epoch : 23
+on train:
+Accuracy: 99.162500 %
+on test:
+Accuracy: 93.800000 %
+epoch : 24
+on train:
+Accuracy: 99.800000 %
+on test:
+Accuracy: 94.800000 %
+epoch : 25
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.350000 %
+model is saved as pure_svhn_25.pt
+epoch : 26
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.700000 %
+epoch : 27
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 28
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.100000 %
+epoch : 29
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 30
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+model is saved as pure_svhn_30.pt
+epoch : 31
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 32
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 33
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.050000 %
+epoch : 34
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.050000 %
+epoch : 35
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.050000 %
+model is saved as pure_svhn_35.pt
+epoch : 36
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 37
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 38
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 39
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 40
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+model is saved as pure_svhn_40.pt
+epoch : 41
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 42
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 96.000000 %
+epoch : 43
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.950000 %
+epoch : 44
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.950000 %
+epoch : 45
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.950000 %
+model is saved as pure_svhn_45.pt
+epoch : 46
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.950000 %
+epoch : 47
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.900000 %
+epoch : 48
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.900000 %
+epoch : 49
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.900000 %
+epoch : 50
+on train:
+Accuracy: 100.000000 %
+on test:
+Accuracy: 95.900000 %
+model is saved as pure_svhn_50.pt
+the trainig takes 82.1878399848938s
